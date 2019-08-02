@@ -9,7 +9,7 @@ oxidized_gems_install:
     - names: {{ oxidized.lookup.gems }}
     - user: {{ oxidized.general.user }}
     - gem_bin: /etc/oxidized/.rvm/rubies/ruby-2.6.3/bin/gem
-    - ruby: /etc/oxidized/.rvm/rubies/ruby-2.6.3/bin/ruby
+    #- ruby: /etc/oxidized/.rvm/rubies/ruby-2.6.3/bin/ruby
 
 # Configure user/group
 oxidized_user:
