@@ -11,7 +11,7 @@ oxidized_gems_install_{{gem}}:
     - name: /etc/oxidized/.rvm/rubies/default/bin/gem install {{gem}}
     - user: {{ oxidized.general.user }}
     - env:
-      - BASH_ENV: /etc/oxidized/.bash_profile
+      - BASH_ENV: /etc/profile
 #    - unless:
 
   # gem.installed:
