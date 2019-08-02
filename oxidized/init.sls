@@ -14,8 +14,8 @@ oxidized_gems_install_{{gem}}:
 
   # gem.installed:
   #   - names: {{ oxidized.lookup.gems }}
-  # 
-
+  #
+{%endfor%}
 
 
 # Configure user/group
