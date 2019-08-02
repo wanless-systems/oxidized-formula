@@ -4,12 +4,19 @@ oxidized_pkgs_install:
   pkg.installed:
     - names: {{ oxidized.lookup.pkgs }}
 
-oxidized_gems_install:
-  gem.installed:
-    - names: {{ oxidized.lookup.gems }}
+{% for gem in oxidized.lookup.gems %}
+oxidized_gems_install_{{gem}}:
+  cmd:
+    - run
+    - name: /etc/oxidized/.rvm/rubies/default/bin/gem install {{gem}}
     - user: {{ oxidized.general.user }}
-    - gem_bin: /etc/oxidized/.rvm/rubies/ruby-2.6.3/bin/gem
-    #- ruby: /etc/oxidized/.rvm/rubies/ruby-2.6.3/bin/ruby
+#    - unless:
+
+  # gem.installed:
+  #   - names: {{ oxidized.lookup.gems }}
+  # 
+
+
 
 # Configure user/group
 oxidized_user:
