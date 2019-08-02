@@ -8,8 +8,9 @@ oxidized_pkgs_install:
 oxidized_gems_install_{{gem}}:
   cmd:
     - run
-    - name: source "$HOME/.rvm/scripts/rvm" ; /etc/oxidized/.rvm/rubies/default/bin/gem install {{gem}}
+    - name: /etc/oxidized/.rvm/rubies/default/bin/gem install {{gem}}
     - user: {{ oxidized.general.user }}
+    - shell: /bin/bash
 #    - unless:
 
   # gem.installed:
