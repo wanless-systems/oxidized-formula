@@ -7,6 +7,7 @@ oxidized_pkgs_install:
 oxidized_gems_install:
   gem.installed:
     - names: {{ oxidized.lookup.gems }}
+    - user: {{ oxidized.general.user }}
 
 # Configure user/group
 oxidized_user:
