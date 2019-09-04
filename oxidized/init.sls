@@ -15,7 +15,7 @@ oxidized_gems_install_{{gem}}:
     - require:
       - cmd: rvm
       - cmd: rvm-bashrc
-      - rvm-ruby: ruby-2.6
+# TODO: Why doesn't this work:      - rvm-ruby: ruby-2.6
 #    - unless:
 
   # gem.installed:
