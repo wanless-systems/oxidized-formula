@@ -14,6 +14,8 @@ oxidized_gems_install_{{gem}}:
       - BASH_ENV: /etc/profile
     - require:
       - cmd: rvm
+      - cmd: rvm-bashrc
+      - rvm-ruby: ruby-2.6
 #    - unless:
 
   # gem.installed:
