@@ -8,8 +8,7 @@ oxidized_pkgs_install:
 oxidized_gems_install_{{gem}}:
   cmd.run:
     #- name: /etc/oxidized/.rvm/rubies/default/bin/gem install {{gem}}
-    - name: gem install {{gem}}
-    - runas: {{ oxidized.general.user }}
+    - name: 'su -l {{ oxidized.general.user }} /bin/bash -c "gem install {{gem}}"'
     - require:
       - cmd: rvm
       - cmd: rvm-bashrc
