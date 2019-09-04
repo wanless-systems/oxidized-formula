@@ -4,8 +4,9 @@
 Description=Oxidized - Network Device Configuration Backup Tool
 
 [Service]
+Type=simple
 Environment=OXIDIZED_HOME={{ oxidized.home }}
-ExecStart=/usr/local/bin/oxidized
+ExecStart=/bin/bash -l -c 'exec $@' {{ oxidized_home }}/.rvm/gems/ruby-2.6.3/bin/oxidized
 User={{ oxidized.user }}
 
 [Install]
