@@ -6,12 +6,9 @@ oxidized_pkgs_install:
 
 {% for gem in oxidized.lookup.gems %}
 oxidized_gems_install_{{gem}}:
-  cmd:
-    - run
+  cmd.run:
     - name: /etc/oxidized/.rvm/rubies/default/bin/gem install {{gem}}
-    - user: {{ oxidized.general.user }}
-    - env:
-      - BASH_ENV: /etc/profile
+    - runas: {{ oxidized.general.user }}
     - require:
       - cmd: rvm
       - cmd: rvm-bashrc
