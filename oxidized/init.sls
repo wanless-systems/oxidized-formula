@@ -27,7 +27,9 @@ oxidized_user:
     - name: {{ oxidized.general.user }}
     - gid: {{ oxidized.general.group }}
     - home: {{ oxidized.general.home }}
-    - shell: /bin/false
+    # The oxidized user MUST have a shell in order to use a local install of
+    # Ruby (which gets installed in $HOME and modified the .bashrc for the user)
+    - shell: /bin/bash
     - system: True
     - groups:
         - {{ oxidized.general.group }}
