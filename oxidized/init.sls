@@ -7,7 +7,8 @@ oxidized_pkgs_install:
 {% for gem in oxidized.lookup.gems %}
 oxidized_gems_install_{{gem}}:
   cmd.run:
-    - name: /etc/oxidized/.rvm/rubies/default/bin/gem install {{gem}}
+    #- name: /etc/oxidized/.rvm/rubies/default/bin/gem install {{gem}}
+    - name: gem install {{gem}}
     - runas: {{ oxidized.general.user }}
     - require:
       - cmd: rvm
