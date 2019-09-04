@@ -12,6 +12,8 @@ oxidized_gems_install_{{gem}}:
     - user: {{ oxidized.general.user }}
     - env:
       - BASH_ENV: /etc/profile
+    - require:
+      - cmd: rvm
 #    - unless:
 
   # gem.installed:
@@ -28,6 +30,9 @@ oxidized_user:
     - home: {{ oxidized.general.home }}
     - shell: /bin/false
     - system: True
+    - groups:
+        - {{ oxidized.general.group }}
+        - rvm
     - require:
       - group: oxidized_user
   group.present:
